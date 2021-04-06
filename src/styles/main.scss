@@ -24,6 +24,12 @@ body {
     color: map-get($colors, font);
     margin: 0;
 
+    img {
+        user-select: none !important;
+        touch-action: none;
+        pointer-events: none;
+    }
+
     a {
         color: map-get($colors, font);
         text-decoration: none;

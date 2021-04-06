@@ -8,7 +8,7 @@
     {{ #weather }}
         {{ #showTemperature }}
             <div class="temperature weatherItem">
-                <img src="http://openweathermap.org/img/wn/{{ weather.weather.0.icon }}.png">
+                <img dragable="false" src="http://openweathermap.org/img/wn/{{ weather.weather.0.icon }}.png">
                 {{ weather.main.temp }}ºF
             </div>
         {{ /showTemperature }}
