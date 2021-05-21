@@ -47,6 +47,11 @@ module.exports = {
                 from: 'src/templates/*',
                 to: 'templates/',
                 flatten: true
+            },
+            {
+                from: 'src/bg/',
+                to: 'bg/',
+                flatten: false
             }
         ]),
         new HtmlWebpackPlugin({
