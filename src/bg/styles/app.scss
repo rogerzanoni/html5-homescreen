@@ -1,4 +1,5 @@
-@import "~bootstrap/scss/bootstrap";
+//@import "~bootstrap/scss/bootstrap";
+
 @media (max-device-width: 720px) and (orientation: portrait) {
     @import "main.scss";
     @import "portrait.scss";
