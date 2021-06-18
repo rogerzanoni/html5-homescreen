@@ -21,7 +21,6 @@ module.exports = {
         library: '[name]'
     },
     optimization: {
-        minimize: false,
         minimizer: [new UglifyJsPlugin()],
         splitChunks: {
             chunks: 'all',
