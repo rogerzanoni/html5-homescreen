@@ -21,6 +21,7 @@ module.exports = {
         library: '[name]'
     },
     optimization: {
+        minimize: false,
         minimizer: [new UglifyJsPlugin()],
         splitChunks: {
             chunks: 'all',
@@ -57,7 +58,7 @@ module.exports = {
             template: 'src/index.html',
             filename: 'index.html',
             inject: 'body',
-            chunks: ['index']
+            chunks: ['index', 'vendors~index']
         }),
         new HtmlWebpackPlugin({
             template: 'src/bg/index.html',
