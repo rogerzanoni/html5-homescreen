@@ -10,7 +10,8 @@ const ZipPlugin = require('zip-webpack-plugin');
 module.exports = {
     mode: 'production',
     entry: {
-        index: './src/index.js'
+        index: './src/index.js',
+        bg: './src/bg/index.js'
     },
     output: {
         path: __dirname + '/dist',
@@ -21,6 +22,9 @@ module.exports = {
     },
     optimization: {
         minimizer: [new UglifyJsPlugin()],
+        splitChunks: {
+            chunks: 'all',
+        },
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
@@ -52,10 +56,17 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: 'src/index.html',
             filename: 'index.html',
-            inject: 'body'
+            inject: 'body',
+            chunks: ['index', 'vendors~index']
+        }),
+        new HtmlWebpackPlugin({
+            template: 'src/bg/index.html',
+            filename: 'bg/index.html',
+            inject: 'body',
+            chunks: ['bg']
         }),
         new MiniCSSExtractPlugin({
-            filename: 'app.css',
+            filename: '[name].css',
             path: __dirname + '/dist'
         }),
         new ZipPlugin({
