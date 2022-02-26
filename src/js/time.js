@@ -1,6 +1,6 @@
 import { load as load_template } from './templates';
 import Mustache from 'mustache';
-import { weather } from 'agl-js-api';
+import * as weather from './agl_stubs_weather';
 
 var template;
 var root;

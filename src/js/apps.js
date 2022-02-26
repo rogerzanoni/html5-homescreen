@@ -1,5 +1,4 @@
 import { load as load_template } from './templates';
-import { homescreen, afmMain } from 'agl-js-api';
 import Mustache from 'mustache';
 
 var configjson = require('../config.json');
@@ -15,26 +14,24 @@ function show() {
 
 function locateApp(appId, appList) {
     return appList.find(function(app){
-        return app.id.split('@')[0] === appId
+        return app[0].split('@')[0] === appId
     });
 }
 
 function load_application_list() {
-    afmMain.runnables().then(function(result) {
+    navigator.appService.getApplications(true, result => {
         configjson.apps.forEach(function(app) {
             var internalApp = locateApp(app.id, result);
 
             if( internalApp ) {
                 page.apps.push({
-                    id: internalApp.id,
-                    name: internalApp.name,
+                    id: internalApp[0],
+                    name: internalApp[1],
                     icon: app.icon
                 });
 
                 if( app.id === configjson.launch ) {
-                    afmMain.start(internalApp.id).then(function(result) {
-                        console.log("success: " + result);
-                    });
+                    navigator.appService.start(internalApp[0]);
                 }
             }
 
@@ -45,9 +42,7 @@ function load_application_list() {
 }
 
 export function start(appId) {
-    homescreen.showWindow(appId.split('@')[0]).then(function(result) {
-        console.log("success: " + result);
-    });
+    navigator.appService.start(appId.split('@')[0]);
 }
 
 export function init(node) {

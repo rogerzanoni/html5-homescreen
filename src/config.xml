@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" id="webapps-html5-homescreen" version="1.0.0">
+<widget xmlns="http://www.w3.org/ns/widgets" id="homescreen" version="1.0.0">
   <name>Homescreen</name>
   <icon src="icon.svg"/>
   <content src="index.html" type="text/html"/>
@@ -8,20 +8,7 @@
   <license>APL 2.0</license>
   <surface role="panel" panel="left"/>
   <window width="218"/>
-  <feature name="urn:AGL:widget:required-permission">
-    <param name="urn:AGL:permission::system:run-by-default" value="required" />
-    <param name="urn:AGL:permission::public:no-htdocs" value="required" />
-    <param name="urn:AGL:permission::public:display" value="required" />
-    <param name="urn:AGL:permission::public:audio" value="required" />
-    <param name="urn:AGL:permission:afm:system:widget" value="required" /> <!-- list available apps -->
-    <param name="urn:AGL:permission:afm:system:runner" value="required" /> <!-- run other apps -->
-    <param name="urn:AGL:permission::public:applications:read" value="required" /> <!-- get app icons -->
-  </feature>
   <feature name="urn:AGL:widget:required-api">
-    <param name="homescreen" value="ws" />
-    <param name="network-manager" value="ws" />
-    <param name="weather" value="ws" />
-    <param name="Bluetooth-Manager" value="ws" />
-    <param name="afm-main" value="ws" />
+    <param name="agl_appservice" value="injection" />
   </feature>
 </widget>

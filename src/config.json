@@ -18,7 +18,7 @@
         }
     ],
     "background": "webapps-html5-background",
-    "launch": "webapps-html5-launcher",
+    "launch": "launcher",
     "network": {
         "bluetooth": "fab fa-bluetooth-b",
         "ethernet": "fas fa-network-wired",

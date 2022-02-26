@@ -1,5 +1,5 @@
 import { load as load_template } from './templates';
-import { network } from 'agl-js-api';
+import * as network from './agl_stubs_network';
 import Mustache from 'mustache';
 
 var configjson = require('../config.json');
