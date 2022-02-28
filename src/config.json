@@ -1,7 +1,7 @@
 {
     "apps": [
         {
-            "id": "webapps-html5-launcher",
+            "id": "launcher",
             "icon": "fas fa-home"
         },
         {
