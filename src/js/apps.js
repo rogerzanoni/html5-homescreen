@@ -31,7 +31,9 @@ function load_application_list() {
                 });
 
                 if( app.id === configjson.launch ) {
-                    navigator.appService.start(internalApp[0]);
+                    setTimeout(function() {
+                        navigator.appService.start(internalApp[0]);
+                    }, 1000);
                 }
             }
 
