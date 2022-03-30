@@ -1,7 +1,9 @@
 var configjson = require('../config.json');
 
 export function load() {
-    navigator.appService.start(configjson.background);
+    setTimeout(function() {
+        navigator.appService.start(configjson.background);
+    }, 2000);
 }
 
 
