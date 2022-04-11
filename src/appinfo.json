@@ -1,0 +1,17 @@
+{
+  "id": "homescreen",
+  "title": "Home screen",
+  "description": "HTML5 Homescreen demo",
+  "version": "1.0.0",
+  "vendor": "Igalia, S.L.",
+  "type": "web",
+  "main": "index.html",
+  "uiRevision": "2",
+  "icon": "icon.svg",
+  "surface": {
+    "role": "panel",
+    "panel_edge": "left",
+    "width": "218"
+  },
+  "extensions": [ "agl_appservice" ]
+}

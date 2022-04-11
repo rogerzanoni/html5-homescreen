@@ -30,7 +30,7 @@ module.exports = {
                 flatten: true
             },
             {
-                from: 'src/config.xml',
+                from: 'src/appinfo.json',
                 flatten: true
             },
             {
