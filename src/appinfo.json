@@ -9,7 +9,7 @@
   "uiRevision": "2",
   "icon": "icon.svg",
   "surface": {
-    "role": "panel",
+    "type": "panel",
     "panel_edge": "left",
     "width": "218"
   },
