@@ -14,7 +14,7 @@ function show() {
 
 function locateApp(appId, appList) {
     return appList.find(function(app){
-        return app[0].split('@')[0] === appId
+        return app.id === appId
     });
 }
 
@@ -23,16 +23,16 @@ function load_application_list() {
         configjson.apps.forEach(function(app) {
             var internalApp = locateApp(app.id, result);
 
-            if( internalApp ) {
+            if (internalApp) {
                 page.apps.push({
-                    id: internalApp[0],
-                    name: internalApp[1],
+                    id: internalApp.id,
+                    name: internalApp.name,
                     icon: app.icon
                 });
 
                 if( app.id === configjson.launch ) {
                     setTimeout(function() {
-                        navigator.appService.start(internalApp[0]);
+                        navigator.appService.start(internalApp.id);
                     }, 1000);
                 }
             }
@@ -44,7 +44,7 @@ function load_application_list() {
 }
 
 export function start(appId) {
-    navigator.appService.start(appId.split('@')[0]);
+    navigator.appService.start(appId);
 }
 
 export function init(node) {
